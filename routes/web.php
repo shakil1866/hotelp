@@ -18,4 +18,4 @@ use App\Http\Controllers\AdminController;
 // });
 
 route::get('/',[AdminController::class, 'home'])->name('home');
-// route::get('/home',[AdminController::class, 'index'])->name('home');
+route::get('/home',[AdminController::class, 'index'])->name('home');
