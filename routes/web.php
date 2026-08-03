@@ -17,5 +17,5 @@ use App\Http\Controllers\AdminController;
 //     })->name('dashboard');
 // });
 
-route::get('/',[AdminController::class, 'index'])->name('home');
-// route::get('/home',[AdminController::class, 'index'])->name('home');
+route::get('/',[AdminController::class, 'home']);
+route::get('/home',[AdminController::class, 'index'])->name('home');
