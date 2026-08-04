@@ -36,6 +36,10 @@ RUN npm run build
 # Configure Nginx
 COPY docker/nginx.conf /etc/nginx/sites-enabled/default
 
+# Forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
