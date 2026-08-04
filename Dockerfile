@@ -44,6 +44,6 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Start both Nginx and PHP-FPM
-CMD service nginx start && php-fpm
+CMD php artisan migrate --force && service nginx start && php-fpm
 EXPOSE 80
 
