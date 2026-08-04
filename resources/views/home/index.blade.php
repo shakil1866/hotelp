@@ -27,8 +27,8 @@
       
       <!-- end about -->
       <!-- our_room -->
-      @include('home.room')
-      <!-- end our_room -->
+@include('home.room', ['rooms' => $rooms])   
+   <!-- end our_room -->
       <!-- gallery -->
     @include('home.gallery')
       <!-- end gallery -->
